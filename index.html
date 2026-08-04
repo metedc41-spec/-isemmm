@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Berat ❤️ Çisem</title>
+
+<style>
+
+*{
+box-sizing:border-box;
+margin:0;
+padding:0;
+}
+
+body{
+font-family:Arial,sans-serif;
+background:linear-gradient(#fff8dc,#ffe9a8);
+color:#5a4210;
+text-align:center;
+overflow-x:hidden;
+}
+
+header{
+height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+}
+
+h1{
+font-size:70px;
+color:#d49b00;
+font-family:cursive;
+}
+
+h2{
+margin:20px;
+}
+
+button{
+background:#d49b00;
+color:white;
+border:none;
+padding:15px 30px;
+border-radius:30px;
+cursor:pointer;
+font-size:18px;
+}
+
+
+section{
+padding:60px 10%;
+}
+
+
+.gallery{
+display:flex;
+gap:20px;
+justify-content:center;
+flex-wrap:wrap;
+}
+
+
+.gallery img{
+width:280px;
+height:350px;
+object-fit:cover;
+border-radius:20px;
+box-shadow:0 10px 20px #777;
+}
+
+
+.card{
+background:white;
+padding:30px;
+border-radius:20px;
+max-width:700px;
+margin:auto;
+font-size:20px;
+line-height:1.8;
+}
+
+
+.flower{
+position:fixed;
+top:-50px;
+font-size:30px;
+animation:fall 8s linear infinite;
+}
+
+
+.heart{
+position:fixed;
+bottom:-20px;
+animation:heart 5s linear infinite;
+}
+
+
+@keyframes fall{
+
+to{
+transform:translateY(110vh) rotate(360deg);
+opacity:0;
+}
+
+}
+
+
+@keyframes heart{
+
+to{
+transform:translateY(-110vh);
+opacity:0;
+}
+
+}
+
+
+footer{
+padding:40px;
+font-size:25px;
+color:#b8860b;
+}
+
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<audio id="music" loop>
+<source src="muzik.mp3" type="audio/mpeg">
+</audio>
+
+
+<header>
+
+<h1>
+Berat ❤️ Çisem
+</h1>
+
+<h2>
+🌼 Sen benim en güzel çiçeğimsin 🌼
+</h2>
+
+<button onclick="playMusic()">
+Müziği Başlat 🎵
+</button>
+
+</header>
+
+
+
+<section>
+
+<h1>
+Bizim Fotoğraflarımız ❤️
+</h1>
+
+<div class="gallery">
+
+<img src="foto1.jpg">
+<img src="foto2.jpg">
+<img src="foto3.jpg">
+
+</div>
+
+</section>
+
+
+
+<section>
+
+<h1>
+Seni Sevmemin Süresi ⏳
+</h1>
+
+<h2 id="time"></h2>
+
+</section>
+
+
+
+<section>
+
+<h1>
+Çisem'e Mektup 💌
+</h1>
+
+
+<div class="card">
+
+Canım Çisem ❤️
+
+<br><br>
+
+Sen hayatıma gelen en güzel şeysin.
+
+Gülüşün bana mutluluk,
+varlığın bana huzur veriyor.
+
+Seninle daha çok güzel anılar biriktirmek istiyorum.
+
+<br><br>
+
+Seni çok seviyorum.
+
+<br><br>
+
+Berat ❤️
+
+</div>
+
+
+</section>
+
+
+
+<footer>
+
+🌼 Berat & Çisem 🌼
+
+<br>
+
+Sonsuza Kadar ❤️
+
+</footer>
+
+
+
+<script>
+
+
+function playMusic(){
+
+document.getElementById("music").play();
+
+}
+
+
+
+// sayaç
+
+let baslangic =
+new Date("2026-07-25");
+
+
+function sayac(){
+
+let simdi=new Date();
+
+let fark=simdi-baslangic;
+
+
+let gun=Math.floor(
+fark/(1000*60*60*24)
+);
+
+
+document.getElementById("time").innerHTML=
+gun+" gündür birlikteyiz ❤️";
+
+}
+
+setInterval(sayac,1000);
+
+sayac();
+
+
+
+
+// nergis
+
+for(let i=0;i<30;i++){
+
+let c=document.createElement("div");
+
+c.className="flower";
+
+c.innerHTML="🌼";
+
+c.style.left=Math.random()*100+"vw";
+
+c.style.animationDelay=Math.random()*5+"s";
+
+document.body.appendChild(c);
+
+}
+
+
+
+// kalpler
+
+setInterval(()=>{
+
+let h=document.createElement("div");
+
+h.className="heart";
+
+h.innerHTML="❤️";
+
+h.style.left=Math.random()*100+"vw";
+
+h.style.fontSize=
+20+Math.random()*30+"px";
+
+document.body.appendChild(h);
+
+
+setTimeout(()=>{
+
+h.remove();
+
+},5000);
+
+
+},700);
+
+
+
+</script>
+
+
+</body>
+</html>
